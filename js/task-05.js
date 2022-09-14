@@ -1,7 +1,15 @@
 const input = document.querySelector('input#name-input');
 const user = document.querySelector('span#name-output');
 
-input.addEventListener(
-  'input',
-  event => (user.textContent = event.currentTarget.value)
-);
+input.addEventListener('input', onInputChange);
+
+function onInputChange(event) {
+  if (
+    event.currentTarget.value.length !== 0 &&
+    event.currentTarget.value !== ' '
+  ) {
+    user.textContent = event.currentTarget.value;
+  } else {
+    user.textContent = 'Anonymous';
+  }
+}
