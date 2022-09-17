@@ -5,8 +5,8 @@ input.addEventListener('input', onInputChange);
 
 function onInputChange(event) {
   if (
-    event.currentTarget.value.length !== 0 &&
-    event.currentTarget.value !== ' '
+    event.currentTarget.value.trim().length !== 0 &&
+    event.currentTarget.value !== ''
   ) {
     user.textContent = event.currentTarget.value;
   } else {
