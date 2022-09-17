@@ -7,21 +7,14 @@ const ingredients = [
   'Condiments',
 ];
 
-// --- "for of" option
-for (const item of ingredients) {
-  const itemEl = document.createElement('li');
-  itemEl.classList.add('item');
-  itemEl.textContent = item;
+const listRef = document.querySelector('#ingredients');
+let arr = [];
 
-  const listEl = document.querySelector('#ingredients');
-  listEl.appendChild(itemEl);
-}
+ingredients.forEach(item => {
+  const itemRef = document.createElement('li');
+  itemRef.classList.add('item');
+  itemRef.textContent = item;
+  arr.push(itemRef);
+});
 
-// --- .map option
-// ingredients.map(item => {
-//   const itemEl = document.createElement('li');
-//   itemEl.classList.add('item');
-//   itemEl.textContent = item;
-//   const listEl = document.querySelector('#ingredients');
-//   listEl.appendChild(itemEl);
-// });
+listRef.append(...arr);
