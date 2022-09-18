@@ -9,6 +9,7 @@ function onClick(event) {
     event.currentTarget.elements.password.value === ''
   ) {
     alert('Come on, Man fill in the email and the password 😉');
+    return;
   }
 
   const { email, password } = event.currentTarget.elements;
